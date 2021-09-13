@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BCE26EFBAC500B57352 /* AppDelegate.swift */; };
-		694A8BD326EFBAC500B57352 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BD226EFBAC500B57352 /* ViewController.swift */; };
+		694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BD226EFBAC500B57352 /* LaunchViewController.swift */; };
 		694A8BD626EFBAC500B57352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BD426EFBAC500B57352 /* Main.storyboard */; };
 		694A8BD826EFBAC700B57352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BD726EFBAC700B57352 /* Assets.xcassets */; };
 		694A8BDB26EFBAC700B57352 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BD926EFBAC700B57352 /* LaunchScreen.storyboard */; };
@@ -19,12 +19,13 @@
 		694A8BF026EFC50E00B57352 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BEF26EFC50E00B57352 /* APIManager.swift */; };
 		694A8BF226EFC51F00B57352 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BF126EFC51F00B57352 /* APIConnector.swift */; };
 		694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BF326EFC59A00B57352 /* APIErrors.swift */; };
+		694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8C1726EFD9F800B57352 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		694A8BCB26EFBAC500B57352 /* voyageOfElon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voyageOfElon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694A8BCE26EFBAC500B57352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		694A8BD226EFBAC500B57352 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		694A8BD226EFBAC500B57352 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		694A8BD526EFBAC500B57352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		694A8BD726EFBAC700B57352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		694A8BDA26EFBAC700B57352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		694A8BEF26EFC50E00B57352 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		694A8BF126EFC51F00B57352 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		694A8BF326EFC59A00B57352 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		694A8C1726EFD9F800B57352 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				694A8BCE26EFBAC500B57352 /* AppDelegate.swift */,
+				694A8C1726EFD9F800B57352 /* SceneDelegate.swift */,
 				694A8BE226EFBAE200B57352 /* Model */,
 				694A8BE326EFBAEF00B57352 /* View */,
 				694A8BE426EFBAF800B57352 /* Contreoller */,
@@ -93,7 +96,6 @@
 		694A8BE326EFBAEF00B57352 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				694A8BD226EFBAC500B57352 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,6 +103,7 @@
 		694A8BE426EFBAF800B57352 /* Contreoller */ = {
 			isa = PBXGroup;
 			children = (
+				694A8BD226EFBAC500B57352 /* LaunchViewController.swift */,
 			);
 			path = Contreoller;
 			sourceTree = "<group>";
@@ -195,7 +198,8 @@
 			files = (
 				694A8BEE26EFC45800B57352 /* Launche.swift in Sources */,
 				694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */,
-				694A8BD326EFBAC500B57352 /* ViewController.swift in Sources */,
+				694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */,
+				694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */,
 				694A8BF226EFC51F00B57352 /* APIConnector.swift in Sources */,
 				694A8BF026EFC50E00B57352 /* APIManager.swift in Sources */,
 				694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */,
@@ -348,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EC26TMBN8M;
-				INFOPLIST_FILE = voyageOfElon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/voyageOfElon/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jbapp.voyageOfElon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,7 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EC26TMBN8M;
-				INFOPLIST_FILE = voyageOfElon/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/voyageOfElon/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jbapp.voyageOfElon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
