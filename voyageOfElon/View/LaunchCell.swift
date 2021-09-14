@@ -11,17 +11,26 @@ import UIKit
 
 class LaunchCell: UITableViewCell {
 
-    @IBOutlet weak var success: UILabel!
-    @IBOutlet weak var ship: UILabel!
-    @IBOutlet weak var staticFire: UILabel!
-    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet private weak var successLabel: UILabel!
+    @IBOutlet weak var launchLabel: UILabel!
+    @IBOutlet weak var staticFireLabel: UILabel!
+    @IBOutlet weak var pictureImageView: UIImageView!
 
+    var successSwitch: Bool = true {
+        didSet {
+            if successSwitch {
+                successLabel.text = "🟢"
+            }else {
+                successLabel.text = "🔴"
+            }
+        }
+    }
   override func prepareForReuse() {
     super.prepareForReuse()
     
-    success.text = nil
-    ship.text = nil
-    staticFire.text = nil
-    picture.image = nil
+    successLabel.text = nil
+    launchLabel.text = nil
+    staticFireLabel.text = nil
+    pictureImageView.image = nil
   }
 }

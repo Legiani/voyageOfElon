@@ -23,7 +23,7 @@ class APIManager {
      - Returns: error handler in error format
      - Returns: complemention recived data
      */
-    typealias completionHandler = (Any?) -> ()
+    typealias completionHandler = (Data?) -> ()
     typealias errorHandler = (Error) -> ()
     typealias activityHandler =  (_ loading: Bool) -> ()
     
@@ -48,13 +48,13 @@ class APIManager {
                     parameters: request.PARAMETERS,
                     encoding: request.ENCODING,
                     headers: request.HEADERS
-        ).responseJSON { response in
+        ).responseData { response in
             
             loadingHandler(false)
 
             switch response.result {
             case .success:
-                completionHandler(response.value)
+                completionHandler(response.data)
             case let .failure(error):
                 print(error)
                 errorHandler(error)

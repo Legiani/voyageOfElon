@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaunchCell" rowHeight="124" id="hLz-bh-uMI" customClass="LaunchCell" customModule="voyageOfElon" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaunchCellIdentifier" rowHeight="124" id="hLz-bh-uMI" userLabel="LaunchCell" customClass="LaunchCell" customModule="voyageOfElon" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="355" height="124"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hLz-bh-uMI" id="RxW-KT-YtI">
@@ -32,16 +32,16 @@
                                 <rect key="frame" x="33" y="0.0" width="183" height="107"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-2w-22l">
-                                        <rect key="frame" x="10" y="0.0" width="60" height="58"/>
+                                        <rect key="frame" x="10" y="0.0" width="98" height="58"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raketa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiG-9c-XHM">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LaunchCell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiG-9c-XHM">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zažeh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-7F-3Y5">
-                                                <rect key="frame" x="0.0" y="34" width="60" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-7F-3Y5">
+                                                <rect key="frame" x="0.0" y="34" width="98" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,11 +73,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="image" destination="djg-9C-dJF" id="Obx-1a-2zY"/>
-                <outlet property="picture" destination="djg-9C-dJF" id="1xd-Ri-vp4"/>
-                <outlet property="ship" destination="eiG-9c-XHM" id="wze-eR-akf"/>
-                <outlet property="staticFire" destination="tS8-7F-3Y5" id="AYh-9x-N31"/>
-                <outlet property="success" destination="GhQ-i9-pVD" id="8wq-5w-RQ1"/>
+                <outlet property="launchLabel" destination="eiG-9c-XHM" id="7I0-Q5-lok"/>
+                <outlet property="pictureImageView" destination="djg-9C-dJF" id="V4O-5C-SvQ"/>
+                <outlet property="staticFireLabel" destination="tS8-7F-3Y5" id="Lmz-mX-Gwj"/>
+                <outlet property="successLabel" destination="GhQ-i9-pVD" id="3Gp-wH-CdK"/>
             </connections>
             <point key="canvasLocation" x="-10.869565217391305" y="-90.401785714285708"/>
         </tableViewCell>

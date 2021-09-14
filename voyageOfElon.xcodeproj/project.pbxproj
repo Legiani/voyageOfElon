@@ -15,7 +15,7 @@
 		694A8BE726EFBF7C00B57352 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BE626EFBF7C00B57352 /* APIKey.swift */; };
 		694A8BEA26EFC23300B57352 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 694A8BE926EFC23300B57352 /* Alamofire */; };
 		694A8BEC26EFC33900B57352 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BEB26EFC33900B57352 /* README.md */; };
-		694A8BEE26EFC45800B57352 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BED26EFC45800B57352 /* Launch.swift */; };
+		694A8BEE26EFC45800B57352 /* LaunchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BED26EFC45800B57352 /* LaunchElement.swift */; };
 		694A8BF026EFC50E00B57352 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BEF26EFC50E00B57352 /* APIManager.swift */; };
 		694A8BF226EFC51F00B57352 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BF126EFC51F00B57352 /* APIConnector.swift */; };
 		694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BF326EFC59A00B57352 /* APIErrors.swift */; };
@@ -34,7 +34,7 @@
 		694A8BDC26EFBAC700B57352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		694A8BE626EFBF7C00B57352 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		694A8BEB26EFC33900B57352 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		694A8BED26EFC45800B57352 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		694A8BED26EFC45800B57352 /* LaunchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchElement.swift; sourceTree = "<group>"; };
 		694A8BEF26EFC50E00B57352 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		694A8BF126EFC51F00B57352 /* APIConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
 		694A8BF326EFC59A00B57352 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		694A8BE226EFBAE200B57352 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				694A8BED26EFC45800B57352 /* Launch.swift */,
+				694A8BED26EFC45800B57352 /* LaunchElement.swift */,
 				694A8BEF26EFC50E00B57352 /* APIManager.swift */,
 				694A8BF126EFC51F00B57352 /* APIConnector.swift */,
 				694A8BF326EFC59A00B57352 /* APIErrors.swift */,
@@ -203,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				694A8BEE26EFC45800B57352 /* Launch.swift in Sources */,
+				694A8BEE26EFC45800B57352 /* LaunchElement.swift in Sources */,
 				694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */,
 				694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */,
 				694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */,
