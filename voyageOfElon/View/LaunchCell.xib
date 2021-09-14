@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaunchCell" rowHeight="124" id="hLz-bh-uMI" customClass="LaunchCell" customModule="voyageOfElon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="124"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hLz-bh-uMI" id="RxW-KT-YtI">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ndd-XF-I33">
+                        <rect key="frame" x="10" y="10" width="326" height="107"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhQ-i9-pVD">
+                                <rect key="frame" x="0.0" y="0.0" width="23" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="0WE-oV-Ut3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-q1-jZJ">
+                                <rect key="frame" x="33" y="0.0" width="183" height="107"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-2w-22l">
+                                        <rect key="frame" x="10" y="0.0" width="60" height="58"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raketa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiG-9c-XHM">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zažeh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS8-7F-3Y5">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="k1I-2w-22l" firstAttribute="leading" secondItem="CfJ-q1-jZJ" secondAttribute="leading" constant="10" id="Dya-JF-Fva"/>
+                                    <constraint firstItem="k1I-2w-22l" firstAttribute="top" secondItem="CfJ-q1-jZJ" secondAttribute="top" id="JLM-M1-OHH"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="djg-9C-dJF">
+                                <rect key="frame" x="226" y="0.0" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kRy-2v-8Xr"/>
+                                    <constraint firstAttribute="width" constant="100" id="scR-v1-wLE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ndd-XF-I33" firstAttribute="top" secondItem="RxW-KT-YtI" secondAttribute="top" constant="10" id="6bu-Ot-G6n"/>
+                    <constraint firstItem="ndd-XF-I33" firstAttribute="leading" secondItem="RxW-KT-YtI" secondAttribute="leading" constant="10" id="PIl-LD-o2J"/>
+                    <constraint firstAttribute="trailing" secondItem="ndd-XF-I33" secondAttribute="trailing" constant="19" id="Q74-Mw-dS8"/>
+                    <constraint firstAttribute="bottom" secondItem="ndd-XF-I33" secondAttribute="bottom" constant="19" id="cfT-DD-lG3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="djg-9C-dJF" id="Obx-1a-2zY"/>
+                <outlet property="picture" destination="djg-9C-dJF" id="1xd-Ri-vp4"/>
+                <outlet property="ship" destination="eiG-9c-XHM" id="wze-eR-akf"/>
+                <outlet property="staticFire" destination="tS8-7F-3Y5" id="AYh-9x-N31"/>
+                <outlet property="success" destination="GhQ-i9-pVD" id="8wq-5w-RQ1"/>
+            </connections>
+            <point key="canvasLocation" x="-10.869565217391305" y="-90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
