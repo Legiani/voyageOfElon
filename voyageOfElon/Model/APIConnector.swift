@@ -28,7 +28,7 @@ class getAllLaunches: baseAPITask {
             try super.init()
 
             let server = try APIKeys.serverURLString(forAPI: API)
-            URL = server + "/launches"
+            URL = server + "/launches/past"
         } catch{
             throw error
         }
