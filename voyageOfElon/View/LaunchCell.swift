@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 
 class LaunchCell: UITableViewCell {
@@ -14,8 +15,17 @@ class LaunchCell: UITableViewCell {
     @IBOutlet private weak var successLabel: UILabel!
     @IBOutlet weak var launchLabel: UILabel!
     @IBOutlet weak var staticFireLabel: UILabel!
-    @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet private weak var pictureImageView: UIImageView!
 
+    var imageURL: String? {
+        didSet {
+            if imageURL != nil,
+               let url = URL(string:imageURL!){
+                pictureImageView.af.setImage(withURL: url)
+            }
+        }
+    }
+    
     var successSwitch: Bool = true {
         didSet {
             if successSwitch {

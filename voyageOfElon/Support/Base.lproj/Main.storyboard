@@ -12,8 +12,8 @@
         <scene sceneID="8pE-vO-Pkl">
             <objects>
                 <navigationController id="kJc-M9-MWM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D52-JX-R29">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D52-JX-R29">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,26 +32,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-dr-scl">
-                                <rect key="frame" x="0.0" y="88" width="414" height="816"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-dr-scl">
+                                <rect key="frame" x="10" y="150" width="394" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MOi-dr-scl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="NCh-CB-E9x"/>
+                            <constraint firstItem="MOi-dr-scl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="Sxu-Zl-F98"/>
+                            <constraint firstItem="MOi-dr-scl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="bAl-Hs-p4N"/>
+                            <constraint firstAttribute="bottom" secondItem="MOi-dr-scl" secondAttribute="bottom" id="sYY-50-VHO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lodě" id="oSq-sQ-ip0"/>
+                    <navigationItem key="navigationItem" title="Lodě" id="oSq-sQ-ip0">
+                        <barButtonItem key="rightBarButtonItem" image="line.horizontal.3.decrease.circle" catalog="system" id="Y4x-cH-VWM">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="filterButton:" destination="BYZ-38-t0r" id="mcr-5H-Yaz"/>
+                                <segue destination="EEh-ch-gVX" kind="popoverPresentation" popoverAnchorBarButtonItem="Y4x-cH-VWM" id="gIq-pz-UFl">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MOi-dr-scl" id="y1S-Ob-SL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="78"/>
+            <point key="canvasLocation" x="-475.36231884057975" y="77.678571428571431"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="uxe-g2-Cuh">
+            <objects>
+                <tableViewController id="EEh-ch-gVX" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c4G-kk-YbZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" textLabel="adX-x7-S7S" style="IBUITableViewCellStyleDefault" id="Zs4-Q6-MNv">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zs4-Q6-MNv" id="Fsg-Vk-3GZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="adX-x7-S7S">
+                                            <rect key="frame" x="20" y="0.0" width="345.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EEh-ch-gVX" id="zfE-pz-HIU"/>
+                            <outlet property="delegate" destination="EEh-ch-gVX" id="Ysq-tp-bpe"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjF-zO-9Il" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="-203"/>
         </scene>
     </scenes>
     <resources>
+        <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

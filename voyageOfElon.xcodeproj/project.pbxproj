@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		693AFBE326F350ED0031C283 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693AFBE226F350ED0031C283 /* Extension.swift */; };
 		694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BCE26EFBAC500B57352 /* AppDelegate.swift */; };
 		694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BD226EFBAC500B57352 /* LaunchViewController.swift */; };
 		694A8BD626EFBAC500B57352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BD426EFBAC500B57352 /* Main.storyboard */; };
@@ -22,9 +23,11 @@
 		694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8C1726EFD9F800B57352 /* SceneDelegate.swift */; };
 		694A8C1A26EFDC3400B57352 /* LaunchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 694A8C1926EFDC3400B57352 /* LaunchCell.xib */; };
 		694A8C1C26F0AD5600B57352 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8C1B26F0AD5600B57352 /* LaunchCell.swift */; };
+		69B6975B26F127BF0007BE9D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 69B6975A26F127BF0007BE9D /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		693AFBE226F350ED0031C283 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		694A8BCB26EFBAC500B57352 /* voyageOfElon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voyageOfElon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694A8BCE26EFBAC500B57352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		694A8BD226EFBAC500B57352 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				694A8BEA26EFC23300B57352 /* Alamofire in Frameworks */,
+				69B6975B26F127BF0007BE9D /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 				694A8BEF26EFC50E00B57352 /* APIManager.swift */,
 				694A8BF126EFC51F00B57352 /* APIConnector.swift */,
 				694A8BF326EFC59A00B57352 /* APIErrors.swift */,
+				693AFBE226F350ED0031C283 /* Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			name = voyageOfElon;
 			packageProductDependencies = (
 				694A8BE926EFC23300B57352 /* Alamofire */,
+				69B6975A26F127BF0007BE9D /* AlamofireImage */,
 			);
 			productName = voyageOfElon;
 			productReference = 694A8BCB26EFBAC500B57352 /* voyageOfElon.app */;
@@ -173,6 +179,7 @@
 			mainGroup = 694A8BC226EFBAC400B57352;
 			packageReferences = (
 				694A8BE826EFC23300B57352 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				69B6975926F127BF0007BE9D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 694A8BCC26EFBAC500B57352 /* Products */;
 			projectDirPath = "";
@@ -208,6 +215,7 @@
 				694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */,
 				694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */,
 				694A8BF226EFC51F00B57352 /* APIConnector.swift in Sources */,
+				693AFBE326F350ED0031C283 /* Extension.swift in Sources */,
 				694A8BF026EFC50E00B57352 /* APIManager.swift in Sources */,
 				694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */,
 				694A8BE726EFBF7C00B57352 /* APIKey.swift in Sources */,
@@ -423,6 +431,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		69B6975926F127BF0007BE9D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -430,6 +446,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 694A8BE826EFC23300B57352 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		69B6975A26F127BF0007BE9D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69B6975926F127BF0007BE9D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

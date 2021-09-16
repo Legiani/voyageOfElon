@@ -8,12 +8,27 @@
 import UIKit
 import Foundation
 
-class LaunchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LaunchViewController: UIViewController, UISearchResultsUpdating {
+
 
     @IBOutlet weak var tableView: UITableView!
+    let searchController = UISearchController()
+    
     
     let cellIdentifier = "LaunchCellIdentifier"
-    var launches: [LaunchElement?] = []
+    var loadLaunches: [LaunchElement] = []
+    var launchesSorted: [LaunchElement] = []
+    
+    var sort: (KeyPath<LaunchElement, String>) = \LaunchElement.launchpad {
+        didSet {
+            sortData()
+        }
+    }
+    var search: String? = nil {
+        didSet {
+        
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +37,14 @@ class LaunchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.register(UINib(nibName: "LaunchCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
+        searchController.searchResultsUpdater = self
+
+        navigationItem.searchController = searchController
+        
+        loadData()
+    }
+    
+    func loadData() {
         guard let request = try? getAllLaunches.init() else {
             fatalError("Unable to create task getAllLaunches")
         }
@@ -30,8 +53,11 @@ class LaunchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             withRequest: request,
             completionHandler: { [weak self] (data) in
                 do {
-                    self?.launches = try JSONDecoder().decode([LaunchElement].self, from: data!)
-                    self?.tableView.reloadData()
+                    let recivedLauches = try JSONDecoder().decode([LaunchElement].self, from: data!)
+                    self?.loadLaunches = recivedLauches
+                    self?.launchesSorted = recivedLauches
+                    
+                    self?.sortData()
                 } catch {
                    print(error)
                 }
@@ -43,27 +69,48 @@ class LaunchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         )
     }
+    
+    
+    
+    func sortData() {
+        launchesSorted = loadLaunches.sorted(by: sort)
+        tableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+    }
+    
+    @IBAction func filterButton(_ sender: Any) {
+        sort = \LaunchElement.id
+    }
+    
 }
 
-extension LaunchViewController {
+extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        launches.count
+        launchesSorted.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCellIdentifier", for: indexPath) as? LaunchCell else {
             fatalError("Unable to dequeue \(cellIdentifier)")
         }
 
-        guard let launch = launches[indexPath.row] else {
-            return cell
-        }
+        let launch = launchesSorted[indexPath.row]
+        
         cell.prepareForReuse()
         
         cell.successSwitch = launch.success
         cell.launchLabel.text = launch.name
         cell.staticFireLabel.text = launch.dateUtc
+        cell.imageURL = launch.links.patch.small
         return cell
     }
     
