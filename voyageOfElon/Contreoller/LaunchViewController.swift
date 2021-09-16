@@ -19,7 +19,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     var loadLaunches: [LaunchElement] = []
     var launchesSorted: [LaunchElement] = []
     
-    var sort: (KeyPath<LaunchElement, String>) = \LaunchElement.launchpad {
+    var sort: AnyKeyPath = \LaunchElement.launchpad {
         didSet {
             sortData()
         }
@@ -84,7 +84,16 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     @IBAction func filterButton(_ sender: Any) {
-        sort = \LaunchElement.id
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : SortViewController = storyboard.instantiateViewController(withIdentifier: "SortView") as! SortViewController
+        vc.callBackBlock = { result in
+            self.sort = result
+            self.sortData()
+        }
+
+        let navigationController = UINavigationController(rootViewController: vc)
+
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }
@@ -95,11 +104,7 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LaunchCellIdentifier", for: indexPath) as? LaunchCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? LaunchCell else {
             fatalError("Unable to dequeue \(cellIdentifier)")
         }
 

@@ -6,9 +6,7 @@
 import Foundation
 
 // MARK: - LaunchElement
-struct LaunchElement: Codable {
-
-    
+struct LaunchElement: Identifiable, Codable {    
     let fairings: Fairings?
     let links: Links
     let staticFireDateUtc: String?
@@ -24,7 +22,8 @@ struct LaunchElement: Codable {
     let launchpad: String
     let flightNumber: Int?
     let name: String
-    let dateUnix, dateUtc: String?
+    var dateUnix: Int?
+    let dateUtc: String?
     let dateLocal: Date?
     let datePrecision: String?
     let upcoming: Bool
