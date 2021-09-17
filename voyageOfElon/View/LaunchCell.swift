@@ -35,12 +35,13 @@ class LaunchCell: UITableViewCell {
             }
         }
     }
-  override func prepareForReuse() {
-    super.prepareForReuse()
     
-    successLabel.text = nil
-    launchLabel.text = nil
-    staticFireLabel.text = nil
-    pictureImageView.image = nil
-  }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        successLabel.text = nil
+        launchLabel.text = nil
+        staticFireLabel.text = nil
+        pictureImageView.image = nil
+    }
 }

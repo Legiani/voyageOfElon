@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		693AFBE326F350ED0031C283 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693AFBE226F350ED0031C283 /* Extension.swift */; };
 		694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BCE26EFBAC500B57352 /* AppDelegate.swift */; };
 		694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8BD226EFBAC500B57352 /* LaunchViewController.swift */; };
 		694A8BD626EFBAC500B57352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694A8BD426EFBAC500B57352 /* Main.storyboard */; };
@@ -26,11 +25,11 @@
 		698E8A3A26F3E6A500BB174F /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698E8A3926F3E6A500BB174F /* SortCell.swift */; };
 		699939AE26F3B91300196942 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699939AD26F3B91300196942 /* SortViewController.swift */; };
 		69B6975B26F127BF0007BE9D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 69B6975A26F127BF0007BE9D /* AlamofireImage */; };
+		69E2454626F4836200CBB7A6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2454526F4836200CBB7A6 /* Extension.swift */; };
 		69FF3AA726F3DA89000D2B10 /* SortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69FF3AA626F3DA89000D2B10 /* SortCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		693AFBE226F350ED0031C283 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		694A8BCB26EFBAC500B57352 /* voyageOfElon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voyageOfElon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694A8BCE26EFBAC500B57352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		694A8BD226EFBAC500B57352 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		694A8C1B26F0AD5600B57352 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		698E8A3926F3E6A500BB174F /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		699939AD26F3B91300196942 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		69E2454526F4836200CBB7A6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		69FF3AA626F3DA89000D2B10 /* SortCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 				694A8BEF26EFC50E00B57352 /* APIManager.swift */,
 				694A8BF126EFC51F00B57352 /* APIConnector.swift */,
 				694A8BF326EFC59A00B57352 /* APIErrors.swift */,
-				693AFBE226F350ED0031C283 /* Extension.swift */,
+				69E2454526F4836200CBB7A6 /* Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,10 +223,10 @@
 				694A8BEE26EFC45800B57352 /* LaunchElement.swift in Sources */,
 				698E8A3A26F3E6A500BB174F /* SortCell.swift in Sources */,
 				694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */,
+				69E2454626F4836200CBB7A6 /* Extension.swift in Sources */,
 				694A8C1826EFD9F900B57352 /* SceneDelegate.swift in Sources */,
 				694A8BD326EFBAC500B57352 /* LaunchViewController.swift in Sources */,
 				694A8BF226EFC51F00B57352 /* APIConnector.swift in Sources */,
-				693AFBE326F350ED0031C283 /* Extension.swift in Sources */,
 				699939AE26F3B91300196942 /* SortViewController.swift in Sources */,
 				694A8BF026EFC50E00B57352 /* APIManager.swift in Sources */,
 				694A8BCF26EFBAC500B57352 /* AppDelegate.swift in Sources */,

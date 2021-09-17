@@ -10,25 +10,20 @@ import Foundation
 
 class LaunchViewController: UIViewController, UISearchResultsUpdating {
 
-
+    let cellIdentifier = "LaunchCellIdentifier"
     @IBOutlet weak var tableView: UITableView!
+    
     let searchController = UISearchController()
     
-    
-    let cellIdentifier = "LaunchCellIdentifier"
     var loadLaunches: [LaunchElement] = []
-    var launchesSorted: [LaunchElement] = []
-    
-    var sort: AnyKeyPath = \LaunchElement.launchpad {
+    var launchesSorted: [LaunchElement] = []  {
         didSet {
             sortData()
         }
     }
-    var search: String? = nil {
-        didSet {
-        
-        }
-    }
+    
+    var sort: AnyKeyPath = \LaunchElement.id 
+    var search: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +33,6 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
         tableView.register(UINib(nibName: "LaunchCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
         searchController.searchResultsUpdater = self
-
         navigationItem.searchController = searchController
         
         loadData()
@@ -73,7 +67,8 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     
     
     func sortData() {
-        launchesSorted = loadLaunches.sorted(by: sort)
+        launchesSorted = launchesSorted.sorted(by: sort)
+        
         tableView.reloadData()
     }
     
@@ -81,6 +76,17 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else {
             return
         }
+        
+        let result = loadLaunches.filter({
+            let lowercase = $0.name.lowercased()
+            return lowercase.hasPrefix(text.lowercased())
+        })
+
+        launchesSorted = result
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        launchesSorted = loadLaunches
     }
     
     @IBAction func filterButton(_ sender: Any) {
@@ -95,7 +101,6 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
 
         self.present(navigationController, animated: true, completion: nil)
     }
-    
 }
 
 extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,7 +119,7 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.successSwitch = launch.success
         cell.launchLabel.text = launch.name
-        cell.staticFireLabel.text = launch.dateUtc
+        cell.staticFireLabel.text = launch.staticFireDateUtc
         cell.imageURL = launch.links.patch.small
         return cell
     }

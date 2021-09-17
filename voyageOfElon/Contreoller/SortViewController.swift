@@ -22,36 +22,29 @@ struct SortObject {
 }
 
 class SortViewController: UIViewController {
-    
-    
+        
+    let cellIdentifier = "SortCellIdentifier"
     @IBOutlet weak var tableView: UITableView!
     
-    let cellIdentifier = "SortCellIdentifier"
-
     var sortOptions = [
         SortObject.init(id: 0, label: "Název", keyPath: \LaunchElement.name),
-        SortObject.init(id: 1, label: "Start", keyPath: \LaunchElement.dateUnix),
-        SortObject.init(id: 2, label: "Úspěch ", keyPath: \LaunchElement.success)
+        SortObject.init(id: 1, label: "Start", keyPath: \LaunchElement.staticFireDateUtc),
+        SortObject.init(id: 2, label: "Úspěch", keyPath: \LaunchElement.success)
     ]
     var selectedSortId: Int = 1
     var callBackBlock : ((AnyKeyPath) -> Void)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        selectedSortId = 1
-        
+                
         tableView.dataSource = self
         tableView.delegate = self
-        
-        tableView.allowsMultipleSelection = false
-
         tableView.register(UINib(nibName: "SortCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         let selected = sortOptions[selectedSortId].keyPath
+        //Return selected sort keypath
         callBackBlock!(selected)
     }
 }
@@ -69,7 +62,8 @@ extension SortViewController: UITableViewDelegate, UITableViewDataSource {
 
         let options = sortOptions[indexPath.row]
         cell.title.text = options.label
-
+        
+        #warning("add onapper selected sort")
         cell.accessoryType = .none
         
         return cell
@@ -78,12 +72,12 @@ extension SortViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
-        selectedSortId = indexPath.row
-        
+        self.selectedSortId = indexPath.row
+    
         self.dismiss(animated: true, completion: nil)
     }
+    
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
-
