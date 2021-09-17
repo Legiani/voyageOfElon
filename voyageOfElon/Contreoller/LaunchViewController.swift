@@ -16,11 +16,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController()
     
     var loadLaunches: [LaunchElement] = []
-    var launchesSorted: [LaunchElement] = []  {
-        didSet {
-            sortData()
-        }
-    }
+    var launchesSorted: [LaunchElement] = []
     
     var sort: AnyKeyPath = \LaunchElement.id 
     var search: String? = nil
@@ -83,10 +79,12 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
         })
 
         launchesSorted = result
+        sortData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         launchesSorted = loadLaunches
+        sortData()
     }
     
     @IBAction func filterButton(_ sender: Any) {
