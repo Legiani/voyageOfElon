@@ -24,6 +24,7 @@
 		694A8C1C26F0AD5600B57352 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694A8C1B26F0AD5600B57352 /* LaunchCell.swift */; };
 		698E8A3A26F3E6A500BB174F /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698E8A3926F3E6A500BB174F /* SortCell.swift */; };
 		699939AE26F3B91300196942 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699939AD26F3B91300196942 /* SortViewController.swift */; };
+		69B3A9E826F48B3A00F7BD72 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B3A9E726F48B3A00F7BD72 /* DetailViewController.swift */; };
 		69B6975B26F127BF0007BE9D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 69B6975A26F127BF0007BE9D /* AlamofireImage */; };
 		69E2454626F4836200CBB7A6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E2454526F4836200CBB7A6 /* Extension.swift */; };
 		69FF3AA726F3DA89000D2B10 /* SortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69FF3AA626F3DA89000D2B10 /* SortCell.xib */; };
@@ -48,6 +49,7 @@
 		694A8C1B26F0AD5600B57352 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCell.swift; sourceTree = "<group>"; };
 		698E8A3926F3E6A500BB174F /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		699939AD26F3B91300196942 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		69B3A9E726F48B3A00F7BD72 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		69E2454526F4836200CBB7A6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		69FF3AA626F3DA89000D2B10 /* SortCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 			children = (
 				694A8BD226EFBAC500B57352 /* LaunchViewController.swift */,
 				699939AD26F3B91300196942 /* SortViewController.swift */,
+				69B3A9E726F48B3A00F7BD72 /* DetailViewController.swift */,
 			);
 			path = Contreoller;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B3A9E826F48B3A00F7BD72 /* DetailViewController.swift in Sources */,
 				694A8BEE26EFC45800B57352 /* LaunchElement.swift in Sources */,
 				698E8A3A26F3E6A500BB174F /* SortCell.swift in Sources */,
 				694A8BF426EFC59A00B57352 /* APIErrors.swift in Sources */,
@@ -385,6 +389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = jbapp.voyageOfElon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -404,6 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = jbapp.voyageOfElon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

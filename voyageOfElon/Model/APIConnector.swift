@@ -18,20 +18,49 @@ class baseAPITask {
     var ENCODING: ParameterEncoding = URLEncoding.default
 
     var API: String = "SpaceXAPI"
-    init() throws {}
 }
 
 class getAllLaunches: baseAPITask {
     
-    override init() throws {
-        do {
-            try super.init()
+    public override init() {
+        super.init()
 
-            let server = try APIKeys.serverURLString(forAPI: API)
-            URL = server + "/launches/past"
-        } catch{
-            throw error
-        }
+        let server = APIKeys.serverURLString(forAPI: API)
+        URL = server + "/launches/past"
+        
+    }
+}
+
+class getLaunch: baseAPITask {
+    
+    public init(id: String) {
+        super.init()
+
+        let server = APIKeys.serverURLString(forAPI: API)
+        URL = server + "/launches/\(id)"
+
+    }
+}
+
+class getCrew: baseAPITask {
+    
+    public init(id: String) {
+        super.init()
+
+        let server = APIKeys.serverURLString(forAPI: API)
+        URL = server + "/crew/\(id)"
+
+    }
+}
+
+class getRocket: baseAPITask {
+    
+    public init(id: String) {
+        super.init()
+
+        let server = APIKeys.serverURLString(forAPI: API)
+        URL = server + "/rockets/\(id)"
+
     }
 }
 

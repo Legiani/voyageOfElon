@@ -13,6 +13,7 @@
             <objects>
                 <navigationController id="kJc-M9-MWM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D52-JX-R29">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -61,6 +62,74 @@
             </objects>
             <point key="canvasLocation" x="-475.36231884057975" y="77.678571428571431"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Bo7-Ic-UGo">
+            <objects>
+                <viewController storyboardIdentifier="DetailView" id="08C-cM-ANN" customClass="DetailViewController" customModule="voyageOfElon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5FV-iJ-C18">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-FC-FxF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="FMX-fU-jWq"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-YU-ffy">
+                                <rect key="frame" x="26" y="217" width="362" height="159"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-HE-bi8">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LaunchTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfV-3n-GoI">
+                                        <rect key="frame" x="0.0" y="45" width="362" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goP-mv-XI3">
+                                        <rect key="frame" x="0.0" y="79" width="362" height="7"/>
+                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="7" id="aNx-Mp-Wri"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0L-WC-3hu">
+                                        <rect key="frame" x="0.0" y="96" width="362" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-FD-c4d">
+                                        <rect key="frame" x="0.0" y="135" width="362" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oUA-Mj-Jf8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NUj-FC-FxF" firstAttribute="trailing" secondItem="oUA-Mj-Jf8" secondAttribute="trailing" id="3bj-2T-UMu"/>
+                            <constraint firstItem="kIh-YU-ffy" firstAttribute="leading" secondItem="oUA-Mj-Jf8" secondAttribute="leading" constant="26" id="IhK-v5-4ns"/>
+                            <constraint firstItem="oUA-Mj-Jf8" firstAttribute="trailing" secondItem="kIh-YU-ffy" secondAttribute="trailing" constant="26" id="O7e-PH-9sT"/>
+                            <constraint firstItem="NUj-FC-FxF" firstAttribute="centerX" secondItem="kIh-YU-ffy" secondAttribute="centerX" id="TnA-mz-MZi"/>
+                            <constraint firstItem="NUj-FC-FxF" firstAttribute="top" secondItem="5FV-iJ-C18" secondAttribute="top" id="UrQ-3U-BDu"/>
+                            <constraint firstItem="kIh-YU-ffy" firstAttribute="top" secondItem="NUj-FC-FxF" secondAttribute="bottom" constant="25" id="Wal-e6-Vqa"/>
+                            <constraint firstItem="NUj-FC-FxF" firstAttribute="leading" secondItem="oUA-Mj-Jf8" secondAttribute="leading" id="l1h-qT-dxi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKQ-9z-9J4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418.84057971014494" y="491.51785714285711"/>
+        </scene>
         <!--Seřadit-->
         <scene sceneID="y7Y-WL-exr">
             <objects>
@@ -99,6 +168,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

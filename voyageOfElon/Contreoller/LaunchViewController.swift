@@ -35,10 +35,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     func loadData() {
-        guard let request = try? getAllLaunches.init() else {
-            fatalError("Unable to create task getAllLaunches")
-        }
-        
+        let request = getAllLaunches.init()
         APIManager.shared.getJsonRequest(
             withRequest: request,
             completionHandler: { [weak self] (data) in
@@ -59,8 +56,6 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
             }
         )
     }
-    
-    
     
     func sortData() {
         launchesSorted = launchesSorted.sorted(by: sort)
