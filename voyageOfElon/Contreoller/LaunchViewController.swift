@@ -117,7 +117,11 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        vc.launch = launchesSorted[indexPath.row]
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
