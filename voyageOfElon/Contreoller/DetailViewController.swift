@@ -27,7 +27,6 @@ class DetailViewController: UIViewController {
 
         missionName.text = launch.name
         launchTime.text = launch.staticFireDateUtc
-        
     }
     
     func loadRocked(id: String) {

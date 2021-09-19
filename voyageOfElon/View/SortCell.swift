@@ -11,5 +11,4 @@ import UIKit
 class SortObjectCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
-    
 }

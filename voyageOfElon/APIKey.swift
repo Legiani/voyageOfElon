@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 @objc class APIKeys : NSObject {
 
     private static let apiKeys: Dictionary<String,Dictionary<String,Any>> = [
@@ -15,7 +14,6 @@ import Foundation
             "ServerURL"    : "https://api.spacexdata.com/latest",
             "APITokenHeader" : "",
             "APITokenKey" : ""
-            
         ]
     ]
     

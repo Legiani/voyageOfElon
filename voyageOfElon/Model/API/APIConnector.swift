@@ -27,29 +27,6 @@ class getAllLaunches: baseAPITask {
 
         let server = APIKeys.serverURLString(forAPI: API)
         URL = server + "/launches/past"
-        
-    }
-}
-
-class getLaunch: baseAPITask {
-    
-    public init(id: String) {
-        super.init()
-
-        let server = APIKeys.serverURLString(forAPI: API)
-        URL = server + "/launches/\(id)"
-
-    }
-}
-
-class getCrew: baseAPITask {
-    
-    public init(id: String) {
-        super.init()
-
-        let server = APIKeys.serverURLString(forAPI: API)
-        URL = server + "/crew/\(id)"
-
     }
 }
 
@@ -60,7 +37,6 @@ class getRocket: baseAPITask {
 
         let server = APIKeys.serverURLString(forAPI: API)
         URL = server + "/rockets/\(id)"
-
     }
 }
 
