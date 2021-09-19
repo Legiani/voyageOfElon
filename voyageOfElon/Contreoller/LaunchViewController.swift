@@ -50,7 +50,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
                 }
                 
             }, errorHandler: { (error) in
-                print(error)
+                self.showError(text: error.localizedDescription)
             }, loadingHandler: { (show) in
                 
             }
@@ -118,6 +118,9 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc : DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
         vc.launch = launchesSorted[indexPath.row]

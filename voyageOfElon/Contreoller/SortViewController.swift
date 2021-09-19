@@ -31,12 +31,16 @@ class SortViewController: UIViewController {
         SortObject.init(id: 1, label: "Start", keyPath: \LaunchElement.staticFireDateUtc),
         SortObject.init(id: 2, label: "Úspěch", keyPath: \LaunchElement.success)
     ]
-    var selectedSortId: Int = 1
+    var selectedSortId: Int {
+        get{
+            UserDefaults.standard.integer(forKey: "sortOptions")
+        }
+    }
     var callBackBlock : ((AnyKeyPath) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+                        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "SortCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
@@ -63,16 +67,19 @@ extension SortViewController: UITableViewDelegate, UITableViewDataSource {
         let options = sortOptions[indexPath.row]
         cell.title.text = options.label
         
-        #warning("add onapper selected sort")
-        cell.accessoryType = .none
-        
+        if indexPath.row == selectedSortId {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }else {
+            cell.accessoryType = .none
+        }
+            
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
-        self.selectedSortId = indexPath.row
+        UserDefaults.standard.set(indexPath.row, forKey: "sortOptions")
     
         self.dismiss(animated: true, completion: nil)
     }

@@ -44,11 +44,10 @@ class DetailViewController: UIViewController {
                 }
                 
             }, errorHandler: { (error) in
-                print(error)
+                self.showError(text: error.localizedDescription)
             }, loadingHandler: { (show) in
                 
             }
         )
     }
-
 }

@@ -32,5 +32,4 @@ import Foundation
         }
         return serverURL
     }
-
 }

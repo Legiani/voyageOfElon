@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Sequence {
     
@@ -25,5 +26,15 @@ extension Sequence {
                 return false
             }
         }
+    }
+}
+
+extension UIViewController {
+    func showError(text: String) {
+        let alert = UIAlertController(title: "Chybyčka se vbloudila", message: "\(text)", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
 }
