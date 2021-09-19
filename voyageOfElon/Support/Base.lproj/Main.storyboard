@@ -47,12 +47,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lodě" id="oSq-sQ-ip0">
-                        <barButtonItem key="rightBarButtonItem" image="line.horizontal.3.decrease.circle" catalog="system" id="Y4x-cH-VWM">
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <connections>
-                                <action selector="filterButton:" destination="BYZ-38-t0r" id="mcr-5H-Yaz"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="line.horizontal.3.decrease.circle" catalog="system" id="Y4x-cH-VWM">
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="filterButton:" destination="BYZ-38-t0r" id="mcr-5H-Yaz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="line.horizontal.3.circle.fill" catalog="system" id="uey-9a-7U4">
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="actionButtonFilter:" destination="BYZ-38-t0r" id="D4N-Z3-i70"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MOi-dr-scl" id="y1S-Ob-SL3"/>
@@ -168,6 +176,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line.horizontal.3.circle.fill" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

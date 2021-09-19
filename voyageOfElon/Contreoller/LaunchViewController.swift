@@ -18,7 +18,12 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     var loadLaunches: [LaunchElement] = []
     var launchesSorted: [LaunchElement] = []
     
-    var sort: AnyKeyPath = \LaunchElement.id 
+    let sortOptions = [
+        SortObject.init(id: 0, label: "Název", keyPath: \LaunchElement.name),
+        SortObject.init(id: 1, label: "Start", keyPath: \LaunchElement.staticFireDateUtc),
+        SortObject.init(id: 2, label: "Úspěch", keyPath: \LaunchElement.success)
+    ]
+
     var search: String? = nil
     
     override func viewDidLoad() {
@@ -58,7 +63,9 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     func sortData() {
-        launchesSorted = launchesSorted.sorted(by: sort)
+        let sortId = UserDefaults.standard.integer(forKey: "sortOptions")
+        
+        launchesSorted = launchesSorted.sorted(by: sortOptions[sortId].keyPath)
         
         tableView.reloadData()
     }
@@ -86,13 +93,30 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc : SortViewController = storyboard.instantiateViewController(withIdentifier: "SortView") as! SortViewController
         vc.callBackBlock = { result in
-            self.sort = result
             self.sortData()
         }
 
         let navigationController = UINavigationController(rootViewController: vc)
 
         self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    @IBAction func actionButtonFilter(_ sender: Any) {
+        
+        let optionMenu = UIAlertController(title: nil, message: "Seřadit dle:", preferredStyle: .actionSheet)
+
+        for options in sortOptions {
+            let action = UIAlertAction(title: options.label, style: .default, handler: { (UIAlertAction) in
+                UserDefaults.standard.set(options.id, forKey: "sortOptions")
+                
+                self.sortData()
+            });
+            optionMenu.addAction(action)
+        }
+        
+        optionMenu.addAction(UIAlertAction(title: "Zavřít", style: .cancel))
+
+        self.present(optionMenu, animated: true, completion: nil)
     }
 }
 

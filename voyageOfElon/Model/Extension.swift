@@ -22,7 +22,7 @@ extension Sequence {
             case let a as KeyPath<Self.Element, Bool>:
                 return currentElement[keyPath: a]
             default:
-                print("Warning - Sort options is nil!")
+                print("⚠️ Warning - Sort options in compared element is nil!")
                 return false
             }
         }
