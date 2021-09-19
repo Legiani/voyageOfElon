@@ -18,7 +18,12 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     var loadLaunches: [LaunchElement] = []
     var launchesSorted: [LaunchElement] = []
     
-    var sort: AnyKeyPath = \LaunchElement.id 
+    let sortOptions = [
+        SortObject.init(id: 0, label: "Název", keyPath: \LaunchElement.name),
+        SortObject.init(id: 1, label: "Start", keyPath: \LaunchElement.staticFireDateUtc),
+        SortObject.init(id: 2, label: "Úspěch", keyPath: \LaunchElement.success)
+    ]
+
     var search: String? = nil
     
     override func viewDidLoad() {
@@ -35,10 +40,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     func loadData() {
-        guard let request = try? getAllLaunches.init() else {
-            fatalError("Unable to create task getAllLaunches")
-        }
-        
+        let request = getAllLaunches.init()
         APIManager.shared.getJsonRequest(
             withRequest: request,
             completionHandler: { [weak self] (data) in
@@ -53,17 +55,17 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
                 }
                 
             }, errorHandler: { (error) in
-                print(error)
+                self.showError(text: error.localizedDescription)
             }, loadingHandler: { (show) in
                 
             }
         )
     }
     
-    
-    
     func sortData() {
-        launchesSorted = launchesSorted.sorted(by: sort)
+        let sortId = UserDefaults.standard.integer(forKey: "sortOptions")
+        
+        launchesSorted = launchesSorted.sorted(by: sortOptions[sortId].keyPath)
         
         tableView.reloadData()
     }
@@ -91,13 +93,30 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc : SortViewController = storyboard.instantiateViewController(withIdentifier: "SortView") as! SortViewController
         vc.callBackBlock = { result in
-            self.sort = result
             self.sortData()
         }
 
         let navigationController = UINavigationController(rootViewController: vc)
 
         self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    @IBAction func actionButtonFilter(_ sender: Any) {
+        
+        let optionMenu = UIAlertController(title: nil, message: "Seřadit dle:", preferredStyle: .actionSheet)
+
+        for options in sortOptions {
+            let action = UIAlertAction(title: options.label, style: .default, handler: { (UIAlertAction) in
+                UserDefaults.standard.set(options.id, forKey: "sortOptions")
+                
+                self.sortData()
+            });
+            optionMenu.addAction(action)
+        }
+        
+        optionMenu.addAction(UIAlertAction(title: "Zavřít", style: .cancel))
+
+        self.present(optionMenu, animated: true, completion: nil)
     }
 }
 
@@ -122,7 +141,14 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        vc.launch = launchesSorted[indexPath.row]
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

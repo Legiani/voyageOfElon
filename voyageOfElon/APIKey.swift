@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 @objc class APIKeys : NSObject {
 
     private static let apiKeys: Dictionary<String,Dictionary<String,Any>> = [
@@ -15,7 +14,6 @@ import Foundation
             "ServerURL"    : "https://api.spacexdata.com/latest",
             "APITokenHeader" : "",
             "APITokenKey" : ""
-            
         ]
     ]
     
@@ -23,16 +21,13 @@ import Foundation
      return server URL (https://something.com/api)
      
     */
-    static func serverURLString(forAPI: String) throws -> String {
+    static func serverURLString(forAPI: String) -> String {
         guard let api = APIKeys.apiKeys[forAPI] else {
-            print("☠️ Called API \(forAPI) is not defined")
-            throw APIErrors.invalidAPIDeclaration
+            fatalError("☠️ Called API \(forAPI) is not defined ERROR: \(APIErrors.invalidAPIDeclaration)")
         }
         guard let serverURL = api["ServerURL"] as? String else {
-            print("☠️ ServerURL of API call \(forAPI) is not defined")
-            throw APIErrors.invalidAPIBaseURL
+            fatalError("☠️ ServerURL of API call \(forAPI) is not defined ERROR: \(APIErrors.invalidAPIBaseURL)")
         }
         return serverURL
     }
-
 }
