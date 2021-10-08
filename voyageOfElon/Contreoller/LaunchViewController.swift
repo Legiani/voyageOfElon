@@ -90,7 +90,7 @@ class LaunchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     @IBAction func filterButton(_ sender: Any) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard : UIStoryboard = UIStoryboard(name: "SortView", bundle: nil)
         let vc : SortViewController = storyboard.instantiateViewController(withIdentifier: "SortView") as! SortViewController
         vc.callBackBlock = { result in
             self.sortData()
@@ -145,7 +145,7 @@ extension LaunchViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard : UIStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
         let vc : DetailViewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
         vc.launch = launchesSorted[indexPath.row]
 

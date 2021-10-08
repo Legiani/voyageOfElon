@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kJc-M9-MWM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kJc-M9-MWM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,115 +65,33 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MOi-dr-scl" id="y1S-Ob-SL3"/>
+                        <segue destination="gHD-u6-ghH" kind="show" id="98d-6N-wh6"/>
+                        <segue destination="R6Y-a3-kzy" kind="presentation" id="cRM-gt-XTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-475.36231884057975" y="77.678571428571431"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="Bo7-Ic-UGo">
+        <!--DetailView-->
+        <scene sceneID="eif-kK-KYq">
             <objects>
-                <viewController storyboardIdentifier="DetailView" id="08C-cM-ANN" customClass="DetailViewController" customModule="voyageOfElon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5FV-iJ-C18">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-FC-FxF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="FMX-fU-jWq"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kIh-YU-ffy">
-                                <rect key="frame" x="26" y="369" width="362" height="159"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-HE-bi8">
-                                        <rect key="frame" x="0.0" y="0.0" width="362" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LaunchTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfV-3n-GoI">
-                                        <rect key="frame" x="0.0" y="45" width="362" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goP-mv-XI3">
-                                        <rect key="frame" x="0.0" y="79" width="362" height="7"/>
-                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="7" id="aNx-Mp-Wri"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0L-WC-3hu">
-                                        <rect key="frame" x="0.0" y="96" width="362" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-FD-c4d">
-                                        <rect key="frame" x="0.0" y="135" width="362" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oUA-Mj-Jf8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="NUj-FC-FxF" firstAttribute="trailing" secondItem="oUA-Mj-Jf8" secondAttribute="trailing" id="3bj-2T-UMu"/>
-                            <constraint firstItem="kIh-YU-ffy" firstAttribute="leading" secondItem="oUA-Mj-Jf8" secondAttribute="leading" constant="26" id="IhK-v5-4ns"/>
-                            <constraint firstItem="oUA-Mj-Jf8" firstAttribute="trailing" secondItem="kIh-YU-ffy" secondAttribute="trailing" constant="26" id="O7e-PH-9sT"/>
-                            <constraint firstItem="NUj-FC-FxF" firstAttribute="centerX" secondItem="kIh-YU-ffy" secondAttribute="centerX" id="TnA-mz-MZi"/>
-                            <constraint firstItem="NUj-FC-FxF" firstAttribute="top" secondItem="oUA-Mj-Jf8" secondAttribute="top" id="UrQ-3U-BDu"/>
-                            <constraint firstItem="kIh-YU-ffy" firstAttribute="top" secondItem="NUj-FC-FxF" secondAttribute="bottom" constant="25" id="Wal-e6-Vqa"/>
-                            <constraint firstItem="NUj-FC-FxF" firstAttribute="leading" secondItem="oUA-Mj-Jf8" secondAttribute="leading" id="l1h-qT-dxi"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="launchTime" destination="AfV-3n-GoI" id="hYf-PI-y0G"/>
-                        <outlet property="missionImage" destination="NUj-FC-FxF" id="W3e-Wn-ZDZ"/>
-                        <outlet property="missionName" destination="SuO-HE-bi8" id="TWh-j0-UDP"/>
-                        <outlet property="rocketName" destination="D3T-FD-c4d" id="JrF-Ef-i24"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKQ-9z-9J4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="DetailView" storyboardName="DetailView" referencedIdentifier="DetailView" id="gHD-u6-ghH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7WR-YV-Phz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bk9-qg-noW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418.84057971014494" y="491.51785714285711"/>
+            <point key="canvasLocation" x="166" y="228"/>
         </scene>
-        <!--Seřadit-->
-        <scene sceneID="y7Y-WL-exr">
+        <!--SortView-->
+        <scene sceneID="CgD-cQ-PVA">
             <objects>
-                <viewController storyboardIdentifier="SortView" title="Seřadit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DlC-U9-P9K" customClass="SortViewController" customModule="voyageOfElon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4jr-9V-5fr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-jQ-JQ2">
-                                <rect key="frame" x="20" y="64" width="374" height="832"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="CKL-0G-H2B"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="F0b-jQ-JQ2" firstAttribute="trailing" secondItem="CKL-0G-H2B" secondAttribute="trailing" constant="-20" id="1Wl-gn-Qdi"/>
-                            <constraint firstAttribute="bottom" secondItem="F0b-jQ-JQ2" secondAttribute="bottom" id="3U3-Kf-Q7P"/>
-                            <constraint firstItem="F0b-jQ-JQ2" firstAttribute="leading" secondItem="CKL-0G-H2B" secondAttribute="leading" constant="20" id="N0u-bN-hbY"/>
-                            <constraint firstItem="F0b-jQ-JQ2" firstAttribute="top" secondItem="CKL-0G-H2B" secondAttribute="top" constant="20" id="fjD-8F-QMJ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="F0b-jQ-JQ2" id="Csh-lO-VyV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v3A-5k-Fak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="SortView" storyboardName="SortView" referencedIdentifier="SortView" id="R6Y-a3-kzy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fzH-CH-rfl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFJ-zy-zlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431.8840579710145" y="-209.59821428571428"/>
+            <point key="canvasLocation" x="165" y="-70"/>
         </scene>
     </scenes>
     <resources>
@@ -183,9 +102,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
